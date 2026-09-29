@@ -1,0 +1,10 @@
+jupyterlab>=4.0
+gymnasium>=1.0
+matplotlib>=3.8
+networkx>=3.2
+numpy>=1.26
+pandas>=2.1
+scikit-learn>=1.4
+seaborn>=0.13
+tqdm>=4.66
+

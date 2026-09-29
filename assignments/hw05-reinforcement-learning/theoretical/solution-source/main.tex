@@ -1,0 +1,144 @@
+% ===========================
+% Persian Exam Template
+% ===========================
+\documentclass[12pt]{exam}
+
+% ---------------------------
+% 1. Packages
+% ---------------------------
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta, positioning}
+
+\usepackage{fontspec}
+\usepackage{setspace}
+\usepackage{listings}
+\usepackage{graphicx}
+\usepackage{wrapfig}
+\usepackage{subfigure}
+\usepackage{multirow}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{multicol}
+\usepackage{changepage}
+\usepackage[margin=20mm]{geometry}
+\usepackage{physics}
+\usepackage{adjustbox}
+\usepackage{tabularx}
+\usepackage{xcolor}
+\usepackage{enumitem}
+
+% xepersian باید آخر لود شود
+\usepackage{xepersian}
+
+% ---------------------------
+% 2. Persian Font
+% ---------------------------
+\settextfont[
+    Path=fonts/,
+    Extension=.ttf
+]{XB Niloofar}
+
+% ---------------------------
+% 3. Fix parts environment
+% ---------------------------
+% این بخش باعث می‌شود \begin{parts} و \part از exam استفاده نکنند
+% و با XePersian قاطی نکنند.
+\renewenvironment{parts}
+{
+    \begin{enumerate}[
+        label=\textbf{\alph*)},
+        itemsep=1em,
+        topsep=0.5em,
+        rightmargin=0pt,
+        leftmargin=0pt
+    ]
+    \renewcommand{\part}{\item}
+}
+{
+    \end{enumerate}
+}
+
+% ---------------------------
+% 4. Commands
+% ---------------------------
+\newcommand{\bin}[1]{\texttt{#1}}
+
+\newcommand{\namee}{کسری شیخی}
+\newcommand{\idd}{۴۰۳۱۱۰۵۹۶}
+\newcommand{\coursename}{هوش مصنوعی}
+\newcommand{\term}{بهار ۱۴۰۵}
+\newcommand{\college}{دانشکده مهندسی کامپیوتر}
+\newcommand{\prof}{استاد: آرش ماری‌اوریاد}
+
+\singlespacing
+\parindent 0ex
+
+% ---------------------------
+% 5. Listings
+% ---------------------------
+\lstset{
+    keywordstyle=\textbf,
+    identifierstyle=,
+    stringstyle=\ttfamily,
+    commentstyle=\color{LimeGreen},
+    numberstyle=\footnotesize,
+    showstringspaces=false
+}
+
+\begin{document}
+
+% ---------------------------
+% Header
+% ---------------------------
+\pagestyle{head}
+\firstpageheader{}{}{}
+\runningheader{صفحه \thepage\ از \numpages}{}{\coursename}
+\runningheadrule
+
+\begin{tabular}{p{.7\textwidth} l}
+\multicolumn{2}{c}{\textbf{به نام خدا}}\\
+\multirow{2}{*}{\includegraphics[scale=0.2]{images/logo.png}} & \\ \\ \\ \\
+& \textbf{\namee}\\
+& \textbf{\idd}\\
+\\
+\textbf{\coursename}\\
+\textbf{\term}\\
+\textbf{\prof}\\ \\
+\textbf{\college} &  \\
+\end{tabular}\\
+
+\vspace{5mm}
+\rule[1ex]{\textwidth}{.1pt}
+
+\textbf{پاسخ تمرین سری پنجم - یادگیری تقویتی}
+
+\rule[1ex]{\textwidth}{.1pt}
+
+% ---------------------------
+% Questions
+% ---------------------------
+\section*{سؤال اول}
+\input{ans/q1}
+\clearpage
+
+\section*{سؤال دوم}
+\input{ans/q2}
+\clearpage
+
+\section*{سؤال سوم}
+\input{ans/q3}
+\clearpage
+
+\section*{سؤال چهارم}
+\input{ans/q4}
+\clearpage
+
+\section*{سؤال پنجم}
+\input{ans/q5}
+\clearpage
+
+\section*{سؤال ششم}
+\input{ans/q6}
+
+% ---------------------------
+\end{document}
